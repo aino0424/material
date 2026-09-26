@@ -302,6 +302,8 @@ a {
     background-color:#000;
     width: 70px; 
     color: #fff;
+    text-align: center;
+    text-align-last: center;
 }
 
 .price {
@@ -755,7 +757,7 @@ a {
   .hamburger {
     position: absolute;
     right: 0;
-    top: 50%;
+    top: calc(50% + 8px);
     transform: translateY(-50%);
   }
 
@@ -938,6 +940,95 @@ a {
   .footer {
     text-align: center;
     padding: 12px 20px 16px;
+  }
+}
+
+/* ===================================================
+   ORDERテーブル：600px以下ではテーブルを隠し
+   専用のモバイルサマリーを表示する
+=================================================== */
+.order-summary-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .page-order .order-step,
+  .order-content {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .order-table {
+    display: none;
+  }
+
+  .order-summary-mobile {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+
+  .summary-product {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 8px;
+  }
+
+  .summary-product img {
+    width: 90px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+  }
+
+  .summary-product .product-name {
+    font-size: 15px;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .summary-product .product-code {
+    font-size: 11px;
+    color: #888;
+  }
+
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+  }
+
+  .summary-label {
+    color: #888;
+    font-size: 12px;
+  }
+
+  .summary-row small {
+    font-size: 10px;
+    margin-left: 4px;
+  }
+
+  .summary-total {
+    border-bottom: none;
+    padding-top: 10px;
+    font-size: 15px;
+  }
+
+  .summary-total .summary-label {
+    color: #222;
+    font-size: 14px;
   }
 }
 
