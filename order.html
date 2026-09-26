@@ -6,6 +6,7 @@
   <title>MATÉRIEL | ORDER</title>
   <link rel="stylesheet" href="css.css" />
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/pexels-polina-kovaleva-5507251.jpg">
 </head>
 
 <body class="page-inner page-order">
@@ -18,7 +19,7 @@
       </a>
     </div>
 
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
     <label for="nav-toggle" class="hamburger" aria-label="メニューを開く">
       <span></span><span></span><span></span>
     </label>
@@ -100,9 +101,9 @@
                 <p class="product-code">1890377-678-243</p>
               </div>
             </td>
-            <td>36</td>
-            <td>1</td>
-            <td class="price">¥37,400<span>(TAX)</span></td>
+            <td data-label="サイズ">36</td>
+            <td data-label="数量">1</td>
+            <td class="price" data-label="小計">¥37,400<span>(TAX)</span></td>
           </tr>
         </tbody>
 
@@ -116,6 +117,34 @@
         </tfoot>
         
       </table>
+
+      <!-- モバイル専用サマリー（600px以下でのみ表示） -->
+      <div class="order-summary-mobile">
+        <div class="summary-product">
+          <img src="img/pexels-deno-wang-205948777-12161966.jpg" alt="">
+          <div class="summary-info">
+            <p class="product-name">レザーフラットシューズ</p>
+            <p class="product-code">1890377-678-243</p>
+          </div>
+        </div>
+
+        <div class="summary-row">
+          <span class="summary-label">サイズ</span>
+          <span>36</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">数量</span>
+          <span>1</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">小計</span>
+          <span>¥37,400<small>(TAX)</small></span>
+        </div>
+        <div class="summary-row summary-total">
+          <span class="summary-label">合計(税込)</span>
+          <span>¥37,400<small>(TAX)</small></span>
+        </div>
+      </div>
 
       <div class="order-next">
         <button class="order-btn">NEXT</button>
