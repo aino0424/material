@@ -9,6 +9,7 @@ body {
   font-family: 'Jost', sans-serif;
   font-weight: 300;
   color: #222;
+  overflow-x: hidden;
 }
 
 /* ===== header ===== */
@@ -94,6 +95,7 @@ body {
   position: relative;
   height: 73vh;
   margin-top: 0;
+  background: #eee;
 }
 
 .hero img {
@@ -101,6 +103,17 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  color: transparent;
+}
+
+.contact-hero img {
+  object-position: 5% center;
+}
+
+.hero picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-text {
@@ -649,5 +662,284 @@ a {
 .page-order .order-next {
   max-width: 250px;   /* ← 好きな幅 */
   margin: 60px auto 0;
+}
+
+/* ===================================================
+   ハンバーガーメニュー（デフォルトは非表示 / PC用）
+=================================================== */
+.nav-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 200;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #222;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle:checked ~ .hamburger span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-toggle:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle:checked ~ .hamburger span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ===================================================
+   タブレット（〜1024px）
+=================================================== */
+@media (max-width: 1024px) {
+  .header {
+    padding: 24px 24px 20px;
+  }
+
+  .main {
+    padding: 0 24px;
+    gap: 24px;
+  }
+
+  .product-main {
+    gap: 32px;
+  }
+
+  .step-list {
+    width: 100%;
+  }
+
+  .order-table {
+    width: 100%;
+  }
+}
+
+/* ===================================================
+   モバイル（〜768px）
+=================================================== */
+@media (max-width: 768px) {
+
+  /* ヘッダー：ハンバーガー表示 & メニュー折りたたみ */
+  .hamburger {
+    display: flex;
+  }
+
+  .header-inner {
+    position: relative;
+    align-items: center;
+  }
+
+  .hamburger {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .header-nav {
+    align-items: center;
+  }
+
+  .header-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 240px;
+    max-width: 75vw;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 150;
+    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-toggle:checked ~ .header-nav .header-menu {
+    transform: translateX(0);
+  }
+
+  .header-nav .sns-link,
+  .header-nav .sns {
+    display: none;
+  }
+
+  .nav-toggle:checked ~ .header-nav .sns-link,
+  .nav-toggle:checked ~ .header-nav .sns {
+    display: block;
+  }
+
+  .nav-toggle:checked ~ .header-nav .sns-link {
+    position: fixed;
+    right: 0;
+    bottom: 60px;
+    width: 240px;
+    max-width: 75vw;
+    text-align: center;
+    z-index: 160;
+  }
+
+  .nav-toggle:checked ~ .header-nav .sns-link .sns-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    transform: none;
+  }
+
+  /* サイドバーは非表示にし、ハンバーガーメニューに一本化 */
+  .side-nav {
+    display: none;
+  }
+
+  .main {
+    padding: 0 20px;
+    display: block;
+  }
+
+  .page-content {
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  /* hero */
+  .hero,
+  .hero.about-hero {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  .hero-title {
+    left: 16px;
+  }
+
+  .hero-text {
+    right: 16px;
+    top: 85%;
+  }
+
+  /* about */
+  .about-content {
+    padding: 0 8px;
+  }
+
+  .about-lead {
+    font-size: 22px;
+  }
+
+  .designer {
+    margin-top: 40px;
+  }
+
+  /* product */
+  .product-main {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin: 24px 0 60px;
+  }
+
+  .product-images {
+    order: -1;
+  }
+
+  .product-name {
+    font-size: 30px;
+  }
+
+  .product-thumbs {
+    justify-content: flex-start;
+  }
+
+  .product-description {
+    max-width: 100%;
+  }
+
+  /* contact */
+  .contact-content {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+
+  /* order */
+  .order-title {
+    font-size: 22px;
+  }
+
+  .step-list {
+    font-size: 10px;
+  }
+
+  .order-content {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .order-table {
+    min-width: 560px;
+  }
+
+  .page-order .order-next {
+    max-width: 100%;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 12px 20px 16px;
+  }
+}
+
+/* ===================================================
+   小型モバイル（〜480px）
+=================================================== */
+@media (max-width: 480px) {
+  .logo img {
+    height: 34px;
+  }
+
+  .hero,
+  .hero.about-hero {
+    aspect-ratio: 3 / 4;
+  }
+
+  .about-lead {
+    font-size: 18px;
+    letter-spacing: 0.1em;
+  }
+
+  .about-text-small {
+    font-size: 13px;
+  }
+
+  .designer-photo {
+    width: 120px;
+    height: 140px;
+  }
+
+  .product-name {
+    font-size: 24px;
+  }
+
+  .order-btn {
+    padding: 18px 24px;
+    font-size: 15px;
+  }
+
+  .step-list li {
+    padding: 10px 0;
+  }
 }
 
