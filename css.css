@@ -1,0 +1,653 @@
+/* ===== reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  color: #222;
+}
+
+/* ===== header ===== */
+.header {
+
+  padding: 32px 40px 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+}
+
+.logo img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+
+.header-nav {
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
+}
+
+.header-menu {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* 下揃え */
+  width: 100%;
+}
+
+/* ===== main layout ===== */
+.main {
+  display: flex;
+  gap: 40px;
+  padding: 0 40px;
+  align-items: flex-start;
+}
+
+/* ===== sidebar ===== */
+
+.side-nav {
+  width: 160px;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  position:fixed;   /* 画面に固定 */
+  left: 40px;        /* .main の padding に合わせて調整 */
+  top: var(--side-top, 0px); /* ← CSS変数 */
+}
+
+.side-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+.side-menu li {
+  margin-bottom: 40px;
+}
+
+
+/* ===== page content ===== */
+.page-content {
+  flex: 1;
+  margin-left: 200px; /* サイドバーの幅 + ギャップ分を空ける */
+  margin-top: 10px;
+}
+
+
+/* ===== hero ===== */
+.hero {
+  position: relative;
+  height: 73vh;
+  margin-top: 0;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  margin: 0;
+  top: 80%;                 /* 縦方向中央に */
+  right: 20px;               /* 左端からの余白 */
+  transform: translateY(-50%);
+  font-family: "Noto Serif JP", serif; /* 明朝系フォント */
+}
+
+.hero.about-hero {
+  position: relative; /* 絶対配置の基準にする */
+  height: 73vh;       /* 画像の高さ */
+}
+
+/* hero 画像 */
+.hero.about-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* hero 内タイトル */
+.hero-title {
+  position: absolute; /* 画像の上に重ねる */
+  left: 20px;         /* 左からの余白 */
+  top: 50%;                /* 親要素の高さの中央 */
+  transform: translateY(-50%); /* 上下中央に正確に調整 */
+  color: #fff;
+  font-size: 66px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+/* ===== about ===== */
+.about-content {
+  max-width: 720px;
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+.about-lead {
+  font-family: "Noto Serif JP", serif;
+  font-size: 30px;
+  letter-spacing: 0.14em;
+  margin-bottom: 32px;
+}
+
+.about-text-small {
+  font-family: "Noto Serif JP", serif;
+  font-size: 14px;
+  line-height: 2.1;
+  letter-spacing: 0.08em;
+}
+
+.designer {
+  margin:  60px 0 0 0; /* 上下の余白 */
+  text-align: center;
+}
+
+.designer-photo {
+  width: 155px;        /* 写真の横幅 */
+  height: 180px;       /* 正方形 */
+  object-fit: cover;   /* 写真がはみ出さないように */
+  display: block;
+  margin: 0 auto 5px; /* 中央寄せ＋下に余白 */
+}
+
+.designer-role {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+
+.designer-name {
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+
+
+/* ===== footer ===== */
+.footer {
+  text-align: right;
+  font-size: 12px;
+  padding: 12px 40px 16px;
+  letter-spacing: 0.05em;
+}
+
+/* ===== link ===== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-menu a,
+.side-menu a {
+  transition: opacity 0.2s;
+}
+
+.header-menu a:hover,
+.side-menu a:hover {
+  opacity: 0.6;
+}
+
+.is-current {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ===== sns ===== */
+.sns-link {
+  display: block;
+  line-height: 0; 
+}
+
+.sns-icon {
+  width: 14px;
+  height: 14px;
+  display: block;
+  transform: translateY(-3px);
+}
+
+
+/* ===== product ===== */
+
+.product-main {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 64px;
+  margin: 24px 0 80px;
+  align-items: stretch;
+}
+.product-hero {
+  margin-bottom: 30px; /* 好きな値に */
+}
+
+
+.product-name {
+  font-size: 40px;
+  letter-spacing: 0.12em;
+  margin-bottom: 16px;
+  line-height: 1.1; 
+}
+
+.product-sub {
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+}
+
+.product-text {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+}
+
+.product-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.select-row {
+  display: flex;
+  font-size: 14px;
+  gap: 12px;
+}
+
+.select-row label {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  font-weight: 400;
+  min-width: 48px;   /* ← select と距離を安定させたい場合 */
+}
+
+.select-row select {
+    padding: 4px 8px;
+    border-radius: 0;
+    background-color:#000;
+    width: 70px; 
+    color: #fff;
+}
+
+.price {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.price span {
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.order-btn {
+  margin-top: 16px;
+  padding: 24px 32px;
+  background: #000;
+  color: #fff;
+  border: none;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-size: 18px;
+  width: 100%;          /* ← 幅いっぱい */
+  display: block;       /* ← 念のため */
+  text-align: center;   /* ← 文字中央 */
+}
+
+.order-btn:hover {
+  background-color: #444;
+}
+
+.order-btn:active {
+  background-color: #222;
+}
+
+
+.product-images {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-images img {
+  width: 100%;
+  display: block;
+  object-fit: cover;     /* はみ出た分はトリミング */
+}
+
+.product-thumbs {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  justify-content: flex-end;
+}
+
+.product-thumbs img {
+  width: 60px;
+  cursor: pointer;
+}
+
+.product-description {
+  max-width: 640px;
+  font-family: "Noto Serif JP", serif;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.product-image-main {
+  width: 100%;
+  aspect-ratio: 1/ 1;
+  overflow: hidden;
+}
+
+.product-image-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* ← これ */
+}
+
+/* サムネの箱 */
+.product-thumbs .thumb {
+  width: 72px;              /* ← 好きなサイズに */
+  aspect-ratio: 1 / 1;     /* 真四角 */
+  overflow: hidden;
+}
+
+/* サムネ画像 */
+.product-thumbs .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+.product-thumbs img {
+  filter: none;          /* カラーのまま */
+  transition: all 0.4s;  /* 変化をスムーズに */
+}
+
+.product-thumbs img:hover {
+  filter: grayscale(80%) brightness(80%);
+}
+
+
+.product-thumbs img.is-active {
+  filter: grayscale(100%) brightness(30%); /* 完全白黒＆暗め */
+}
+
+/* ===== contact ===== */
+
+.contact-content {
+  max-width: 500px;
+  margin: 80px auto 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row label {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.form-row label span {
+  margin-left: 4px;
+}
+
+.form-row input,
+.form-row textarea {
+  border: 1px solid #999;
+  padding: 12px;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+}
+
+.form-row textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+.form-submit {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.form-submit button {
+  padding: 24px 32px;
+  background: #ddd;        /* 普通の状態 */
+  border: none;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s; 
+  width: 100%;
+}
+
+.form-submit button:hover {
+  background-color: #999;  /* グレー系に変化 */
+  color: #fff;             /* 文字色も白にすると視認性UP */
+}
+
+
+
+/* ===== ORDER ===== */
+
+.page-order .order-step {
+  margin: 40px 0 60px;
+  text-align: center;
+}
+
+.order-title {
+  font-size: 30px;
+  letter-spacing: 0.15em;
+  margin-bottom: 30px;
+}
+
+.step-list {
+  display: flex;
+  justify-content: space-between; /* ← center をやめる */
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 900px;
+}
+
+.step-list li {
+  position: relative;
+  flex: 1;                 /* 均等割 */
+  max-width: none;         /* ← これ超重要 */
+  padding: 14px 0;
+  font-size: 12px;
+  text-align: center;
+  background: #eee;
+  color: #777;
+}
+
+.step-list li.is-active {
+  background: #8c8c8c;
+  color: #fff;
+  z-index: 2;
+}
+
+/* 三角（見た目だけ） */
+.step-list li.is-active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -16px;
+  transform: translateY(-50%);
+  border-top: 22px solid transparent;
+  border-bottom: 22px solid transparent;
+  border-left: 16px solid #8c8c8c;
+}
+
+
+
+
+
+.order-content {
+  max-width: 900px;
+  margin: 0 auto 160px;
+}
+
+.order-table {
+  width: 700px;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.table-bar {
+  position: relative;
+  padding: 12px 12px 12px 12px;
+  background: #eee;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.table-bar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 40px;
+  background: #888;
+}
+
+
+.order-table td {
+  padding: 20px 12px;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
+.product-cell {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+
+.product-info {
+  line-height: 1.6;
+}
+
+.product-code {
+  font-size: 11px;
+  color: #888;
+}
+
+.price span,
+.total-price span {
+  font-size: 10px;
+  margin-left: 4px;
+}
+
+
+
+.order-next {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.order-btn {
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  margin: 0 auto;
+}
+
+.order-btn:hover {
+  background: #6f6f6f;
+}
+
+.order-product-name {
+  font-size: 20px;
+  letter-spacing: 0.08em;
+}
+
+.page-order .product-name {
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.product-cell img {
+  width: 90px;          /* 好きなサイズ */
+  aspect-ratio: 1 / 1;  /* ← 真四角 */
+  object-fit: cover;    /* はみ出した部分をトリミング */
+  display: block;
+}
+
+.order-table th,
+.order-table td {
+  text-align: left;
+  vertical-align: middle;
+  
+}
+
+.order-table tfoot td {
+  padding: 12px 12px;
+}
+
+/* 左の細い四角を出したくないセル用 */
+.no-bar {
+  padding-left: 12px;        /* table-barより左余白を戻す */
+}
+
+.no-bar::before {
+  display: none;             /* 細い四角を消す */
+}
+
+
+.page-order .order-next {
+  max-width: 250px;   /* ← 好きな幅 */
+  margin: 60px auto 0;
+}
+

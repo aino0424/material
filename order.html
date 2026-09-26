@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>MATÉRIEL | ORDER</title>
+  <link rel="stylesheet" href="css.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300&display=swap" rel="stylesheet">
+</head>
+
+<body class="page-inner page-order">
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/rogo.png" alt="MATÉRIEL">
+      </a>
+    </div>
+
+    <nav class="header-nav">
+      <ul class="header-menu">
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="product.html">PRODUCT</a></li>
+        <li><a href="order.html" class="is-current">ORDER</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+      <a href="#" class="sns-link">
+        <img src="img/Instagram_Glyph_Black.png" class="sns-icon">
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+
+  <!-- side nav（共通） -->
+  <aside class="side-nav">
+    <ul class="side-menu">
+      <li><a href="about.html">ABOUT</a></li>
+      <li><a href="product.html">PRODUCT</a></li>
+      <li><a href="order.html" class="is-current">ORDER</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+    <a href="#" class="sns-link">
+      <img src="img/Instagram_Glyph_Black.png" class="sns-icon">
+    </a>
+  </aside>
+
+  <div class="page-content">
+
+    <!-- hero -->
+    <section class="hero order-hero">
+      <img src="img/pexels-polina-kovaleva-5507251.jpg" alt="ORDER">
+      <h1 class="hero-title">ORDER</h1>
+    </section>
+
+    <!-- order step -->
+    <section class="order-step">
+      <h2 class="order-title">ORDER</h2>
+
+      <ul class="step-list">
+        <li class="is-active">ご注文内容</li>
+        <li>支払・配送</li>
+        <li>入力内容の確認</li>
+        <li>完了</li>
+      </ul>
+    </section>
+
+    <!-- order table -->
+    <section class="order-content">
+      <table class="order-table">
+
+        <colgroup>
+          <col style="width: 50%;">
+          <col style="width: 15%;">
+          <col style="width: 15%;">
+          <col style="width: 20%;">
+        </colgroup>
+
+        <thead>
+          <tr>
+            <th class="table-bar">商品名</th>
+<th class="table-bar">サイズ</th>
+<th class="table-bar">数量</th>
+<th class="table-bar">小計</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="product-cell">
+              <img src="img/pexels-deno-wang-205948777-12161966.jpg" alt="">
+              <div class="product-info">
+                <p class="product-name">レザーフラットシューズ</p>
+                <p class="product-code">1890377-678-243</p>
+              </div>
+            </td>
+            <td>36</td>
+            <td>1</td>
+            <td class="price">¥37,400<span>(TAX)</span></td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr>
+            <td class="table-bar no-bar"></td>
+            <td class="table-bar no-bar"></td>
+            <td class="table-bar total-label">合計(税込)</td>
+            <td class="table-bar total-price">¥37,400<span>(TAX)</span></td>
+          </tr>
+        </tfoot>
+        
+      </table>
+
+      <div class="order-next">
+        <button class="order-btn">NEXT</button>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  COPYRIGHT © MATÉRIEL ALL RIGHTS RESERVED.
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
