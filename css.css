@@ -1089,6 +1089,19 @@ a {
   .logo img {
     height: 30px;
   }
+
+  .hamburger {
+    width: 28px;
+    height: 22px;
+    top: 50%;
+  }
+
+  .nav-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+  }
+  .nav-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+  }
 }
 
 
